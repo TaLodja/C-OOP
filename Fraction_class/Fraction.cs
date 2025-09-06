@@ -64,6 +64,17 @@ namespace Fraction_class
         }
 
         //Operators:
+        public static Fraction operator -(Fraction other) => 
+            new Fraction
+            (
+                -other.ToImproper().Numerator, other.denominator
+            ).ToProper().Reduced();
+        public static Fraction operator +(Fraction left, Fraction right) =>
+           new Fraction
+               (
+               left.ToImproper().Numerator * right.Denominator+ right.ToImproper().Numerator * left.Denominator,
+               left.denominator * right.denominator
+               ).ToProper().Reduced();
         public static Fraction operator *(Fraction left, Fraction right) => 
             new Fraction
                 (
