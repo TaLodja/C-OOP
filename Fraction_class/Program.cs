@@ -1,4 +1,5 @@
 ﻿//#define CONSTRUCTORS_CHECK
+//#define ARITHMETICAL_OPERATORS
 
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,7 @@ namespace Fraction_class
             Console.WriteLine(E);
             E.Print();
 #endif
+#if ARITHMETICAL_OPERATORS
             Fraction A = new Fraction(2, 3, 4);
             Fraction B = new Fraction(3, 4, 5);
             Console.WriteLine(A);
@@ -52,7 +54,18 @@ namespace Fraction_class
             Console.WriteLine(delimiter);
             Console.WriteLine(C);
             Console.WriteLine(A);
+            Console.WriteLine(B); 
+#endif
+
+            Fraction A = new Fraction(2, 3, 4);
+            Fraction B = new Fraction(3, 4, 5);
+            Console.WriteLine(A);
             Console.WriteLine(B);
+
+            A *= B;
+            Console.WriteLine(A);
+            A /= B;
+            Console.WriteLine(A);
         }
     }
 }

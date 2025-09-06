@@ -69,7 +69,7 @@ namespace Fraction_class
                 (
                 left.ToImproper().Numerator * right.ToImproper().Numerator,
                 left.denominator * right.denominator
-                ).ToProper();
+                ).ToProper().Reduced();
         /*{
             Fraction l_buffer = new Fraction(left);
             Fraction r_buffer = new Fraction(right);
@@ -108,6 +108,8 @@ namespace Fraction_class
                 inverted.Denominator, inverted.Numerator
                 );
         }*/
+        public Fraction Reduced() => new Fraction(Integer, Numerator / GCD(), Denominator/GCD());
+        public int GCD() => Convert.ToInt32(System.Numerics.BigInteger.GreatestCommonDivisor(Numerator, Denominator).ToString());
         public void Print() => Console.WriteLine($"{Integer}({Numerator}/{Denominator})");
         /*{
             Console.WriteLine($"{Integer}({Numerator}/{Denominator})");
